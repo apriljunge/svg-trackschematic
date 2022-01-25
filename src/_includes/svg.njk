@@ -1,0 +1,19 @@
+<svg class="" viewBox="-1 -1 2 2" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke-width="{{ constants.inchInCm }}" >
+    <style>
+        :is(svg) {
+            --foreground: black;
+            --background: white;
+            transform: var(--transform);
+        }
+        .right {
+            --transform: scale(1, -1);
+        }
+        .backward {
+            --transform: scale(-1, 1);
+        }
+        .backward.right {
+            --transform: scale(-1, -1);
+        }
+    </style>
+    {{ content | safe -}}
+</svg>

@@ -1,0 +1,91 @@
+{#-
+    Turnout
+#}
+<style>
+    .manual-operation {
+        --opacity-manual-operation: 1;
+    }
+</style>
+<g stroke-width="0.01" stroke="black" style="stroke: var(--foreground)">
+    {%- set turnoutLength = 0.4 -%}
+    {%- set gap = 0.04 %}
+    {% for i in range(1, (turnoutLength / gap)) %}
+        {%- set x1 = i * gap * 2 -%}
+        {%- set y1 = (i - (turnoutLength / gap ) / 2) * -gap * 2 -%}
+        {%- set x2 = i * gap -%}
+        {%- set y2 = i * -gap -%}
+
+        {%- if x1 > turnoutLength -%}
+            {%-  set x1 = turnoutLength -%}
+        {%- else -%}
+            {%-  set y1 = 0 -%}
+        {%- endif -%}
+
+        <line x1="{{ x1 | round(2) }}" y1="{{ y1 | round(2) }}" x2="{{ x2 | round(2) }}" y2="{{ y2 | round(2) }}" />
+    {% endfor -%}
+    <line x1="{{ turnoutLength }}" y1="0" x2="{{ turnoutLength }}" y2="{{ turnoutLength * -1 }}" />
+</g>
+<path
+    style="opacity: calc(1 - var(--opacity-manual-operation, 0)); fill: var(--foreground)"
+    d="m 0 0 h {{ turnoutLength }} v {{ turnoutLength * -1 }}"
+/>
+
+{#-
+    fouling point
+#}
+<style>
+    .fouling-point {
+        --opacity-fouling-point: 1;
+    }
+</style>
+<line
+    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    x1="0.7" y1="0"
+    x2="0.7" y2="-0.7"
+    stroke="black"
+/>
+
+{#-
+    top / bottom pointer
+#}
+<style>
+    .points-left:not(.right) {
+        --opacity-pointer-top: 1;
+    }
+    .points-right:not(.right) {
+        --opacity-pointer-bottom: 1;
+    }
+    .points-left.right {
+        --opacity-pointer-bottom: 1;
+    }
+    .points-right.right {
+        --opacity-pointer-top: 1;
+    }
+</style>
+<line
+    style="opacity: var(--opacity-pointer-top, 0); stroke: var(--foreground)"
+    x1="-0.035" y1="-0.1"
+    x2="0.165" y2="-0.3"
+    stroke="black"
+/>
+<line
+    style="opacity: var(--opacity-pointer-bottom, 0); stroke: var(--foreground)"
+    x1="0.035" y1="0.1"
+    x2="0.3" y2="0.1"
+    stroke="black"
+/>
+
+{#-
+    pointer moving
+#}
+<style>
+    .points-moving {
+        --opacity-pointer-moving: 1;
+    }
+</style>
+<g style="opacity: var(--opacity-pointer-moving, 0); fill: var(--foreground)">
+    <circle r="0.05" cx="0.075" cy="0.1" />
+    <circle r="0.05" cx="0.225" cy="0.1" />
+    <circle r="0.05" cx="0.015" cy="-0.15" />
+    <circle r="0.05" cx="0.115" cy="-0.25" />
+</g>
