@@ -1,11 +1,12 @@
 {
   "name": "svg-trackschematic",
   "version": "0.0.1",
-  "dependencies": {
-    "@11ty/eleventy": "^1.0.0"
-  },
+  "dependencies": {},
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
   }
 }
