@@ -3,30 +3,20 @@
 #}
 <style>
     .manual-operation {
-        --opacity-manual-operation: 1;
+        --turnout-fill: url(#turnout-manual-operation);
     }
 </style>
-<g stroke-width="0.01" stroke="black" style="stroke: var(--foreground)">
-    {%- set turnoutLength = 0.4 -%}
-    {%- set gap = 0.04 %}
-    {% for i in range(1, (turnoutLength / gap)) %}
-        {%- set x1 = i * gap * 2 -%}
-        {%- set y1 = (i - (turnoutLength / gap ) / 2) * -gap * 2 -%}
-        {%- set x2 = i * gap -%}
-        {%- set y2 = i * -gap -%}
-
-        {%- if x1 > turnoutLength -%}
-            {%-  set x1 = turnoutLength -%}
-        {%- else -%}
-            {%-  set y1 = 0 -%}
-        {%- endif -%}
-
-        <line x1="{{ x1 | round(2) }}" y1="{{ y1 | round(2) }}" x2="{{ x2 | round(2) }}" y2="{{ y2 | round(2) }}" />
-    {% endfor -%}
-    <line x1="{{ turnoutLength }}" y1="0" x2="{{ turnoutLength }}" y2="{{ turnoutLength * -1 }}" />
-</g>
+<defs>
+    <pattern id="turnout-manual-operation" viewBox="0 0 1 1" width="20%" height="20%" stroke-width="0.1" style="stroke: var(--foreground)" >
+        <line x1="0" y1="-1" x2="2" y2="1" />
+        <line x1="0" y1="0" x2="1" y2="1" />
+        <line x1="-1" y1="0" x2="1" y2="2" />
+    </pattern>
+</defs>
+{%- set turnoutLength = 0.4 -%}
 <path
-    style="opacity: calc(1 - var(--opacity-manual-operation, 0)); fill: var(--foreground)"
+    style="fill: var(--turnout-fill, var(--foreground)); stroke: var(--foreground)"
+    stroke-width="{{ constants.pointsInCm * 0.7 }}"
     d="m 0 0 h {{ turnoutLength }} v {{ turnoutLength * -1 }}"
 />
 
