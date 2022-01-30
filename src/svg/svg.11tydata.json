@@ -1,5 +1,4 @@
 {
-    "templateEngineOverride": "njk",
     "permalink": "{{ page.filePathStem }}.svg",
     "layout": "svg.njk",
     "tags": ["svg"]
