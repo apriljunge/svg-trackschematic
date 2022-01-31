@@ -69,6 +69,10 @@ code {
     border: 1px solid gray;
     border-radius: 4px;
 }
+svg {
+    width: 100%;
+    height: auto;
+}
 svg + code {
     font-size: 0.7rem;
 }
