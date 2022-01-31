@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 2 2">
+    <style>
+        :is(svg) {
+            --foreground: black;
+            --background: white;
+            transform: var(--transform);
+            stroke-width: 0.03515;
+        }
+        .right {
+            --transform: scale(1, -1);
+        }
+        .backward {
+            --transform: scale(-1, 1);
+        }
+        .backward.right {
+            --transform: scale(-1, -1);
+        }.manual-operation {
+        --turnout-fill: url(#turnout-manual-operation);
+    }.fouling-point {
+        --opacity-fouling-point: 1;
+    }.points-left:not(.right) {
+        --opacity-pointer-top: 1;
+    }
+    .points-right:not(.right) {
+        --opacity-pointer-bottom: 1;
+    }
+    .points-left.right {
+        --opacity-pointer-bottom: 1;
+    }
+    .points-right.right {
+        --opacity-pointer-top: 1;
+    }.points-moving {
+        --opacity-pointer-moving: 1;
+    }
+    </style>
+    <defs>
+        <pattern id="turnout-manual-operation" width="20%" height="20%" stroke-width=".1" style="stroke:var(--foreground)" viewBox="0 0 1 1">
+            <path d="m0-1 2 2M0 0l1 1M-1 0l2 2"/>
+        </pattern>
+    </defs>
+    <path d="M0 0h.4v-.4z" style="fill:var(--turnout-fill, var(--foreground));stroke:var(--foreground)"/>
+    <path stroke="#000" d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0);stroke:var(--foreground)"/>
+    <path stroke="#000" stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0);stroke:var(--foreground)"/>
+    <path stroke="#000" stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0);stroke:var(--foreground)"/>
+    <g style="opacity:var(--opacity-pointer-moving, 0);fill:var(--foreground)">
+        <circle cx=".075" cy=".1" r=".05"/>
+        <circle cx=".225" cy=".1" r=".05"/>
+        <circle cx=".015" cy="-.15" r=".05"/>
+        <circle cx=".115" cy="-.25" r=".05"/>
+    </g>
+</svg>

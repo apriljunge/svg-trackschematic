@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    height: 5rem;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+header a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2rem;
+}
+nav {
+    position: fixed;
+    width: 15rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+}
+main {
+    margin-top: 7rem;
+    margin-left: 15rem;
+}
+.svg-list > li {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    column-gap: 2rem;
+    margin-bottom: 2rem;
+}
+.svg-list form > ul {
+    display: grid;
+    grid-template-columns: 15rem 15rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+h3 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h4 {
+    margin-top:0;
+}
+code {
+    padding: 0.2em 0.4em;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+svg + code {
+    font-size: 0.7rem;
+}
