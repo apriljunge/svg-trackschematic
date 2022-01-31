@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title | capitalize }} - SVG trackschematic Docs</title>
+        <link rel="stylesheet" href="/static/css/docs.css">
+        <script src="/static/js/docs.js" defer></script>
+        <script src="/static/js/index.js" module defer></script>
+    </head>
+    <body>
+        <header>
+            <a href="/docs/">svg trackschematic Docs</a>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/docs/elements/" {% if page.url == "/docs/elements/" %}class="active"{% endif %}>Elements</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <h1>{{title}}</h1>
+            <p class="summary">
+                {{ summary | markdownify | safe }}
+            </p>
+            {{ content | safe }}
+        </main>
+    </body>
+</html>

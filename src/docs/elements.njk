@@ -1,0 +1,65 @@
+---
+title: Elements
+summary: You can use the following elements
+---
+<ul class="svg-list">
+    <h2 id="topology">Topology</h2>
+    {%- for svg in collections.topology %}
+    <li>
+        <h3>{{ svg.fileSlug | capitalize }}</h3>
+        <svg id="test-{{ svg.fileSlug }}" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            <use href="#{{ svg.fileSlug }}" x="0" y="0" />
+        </svg>
+        <form data-target="test-{{ svg.fileSlug }}">
+            <h4>Options</h4>
+            <ul>
+                {%- for name, properties in svg.data.options -%}
+                <li>
+                    {{ name }}
+                    <ul>
+                        {% set type = "radio" %}
+                        {% if properties.classes.length == 1 %}
+                            {% set type = "checkbox" %}   
+                        {% elif properties.default == null %}
+                        <li>
+                            <input type="{{ type }}" checked name="{{ svg.fileSlug }}-{{ name }}" id="{{ svg.fileSlug }}-{{ name }}-null" value="">
+                            <label for="{{ svg.fileSlug }}-{{ name }}-null"><span>(default)</span></label>
+                        </li>
+                        {% endif %}
+
+                        {%- for class in properties.classes -%}
+                        <li>
+                            {% set checked = "" %}
+                            {% if properties.default == class %}
+                                {% set checked = "checked data-default" %}
+                            {% endif %}
+                            <input type="{{ type }}" {{ checked }} name="{{ svg.fileSlug }}-{{ name }}" id="{{ svg.fileSlug }}-{{ name }}-{{class}}" value="{{class}}">
+                            <label for="{{ svg.fileSlug }}-{{ name }}-{{class}}">
+                                <code>{{ class }}</code>
+                                {% if properties.default == class %}
+                                <span>(default)</span>
+                                {% endif %}
+                            </label>
+                        </li>
+                        {%- endfor -%}
+                    </ul>
+                </li>
+                {%- else -%}
+                <li>No options</li>
+                {%- endfor -%}
+            </ul>
+            <details>
+            <summary>Advanced</summary>
+                <ul>
+                    <li>
+                        <label for="foreground">
+                            <code>--foreground:</code>
+                        </label>
+                        <input id="foreground" type="color" value="#000000">
+                    </li>
+                </ul>
+            </details>
+        </form>
+    </li>
+    {%- endfor -%}
+</ul>
