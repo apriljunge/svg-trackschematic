@@ -4,18 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ title | capitalize }} - SVG trackschematic Docs</title>
-        <link rel="stylesheet" href="/static/css/docs.css">
-        <script src="/static/js/docs.js" defer></script>
-        <script src="/static/js/index.js" module defer></script>
+        <link rel="stylesheet" href="{{ '/static/css/docs.css' | url }}">
+        <script src="{{ '/static/js/docs.js' | url }}" defer></script>
+        <script src="{{ '/static/js/index.js' | url }}" module defer></script>
     </head>
     <body>
         <header>
-            <a href="/docs/">svg trackschematic Docs</a>
+            <a href="{{ '/docs/' | url }}">svg trackschematic Docs</a>
         </header>
         <nav>
             <ul>
                 <li>
-                    <a href="/docs/elements/" {% if page.url == "/docs/elements/" %}class="active"{% endif %}>Elements</a>
+                    <a href="{{ '/docs/elements/' | url }}" {% if page.url == "/docs/elements/" %}class="active"{% endif %}>Elements</a>
                 </li>
             </ul>
         </nav>

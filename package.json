@@ -4,6 +4,7 @@
   "dependencies": {},
   "scripts": {
     "build": "eleventy",
+    "build-github": "eleventy --pathprefix='/svg-trackschematic/'",
     "start": "eleventy --serve"
   },
   "devDependencies": {
