@@ -18,7 +18,8 @@ module.exports = function(eleventyConfig) {
                             overrides: {
                                 minifyStyles: false,
                                 convertStyleToAttrs: false,
-                                inlineStyles: false
+                                inlineStyles: false,
+                                collapseGroups: false
                             }
                         }
                     },
