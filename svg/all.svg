@@ -34,8 +34,12 @@
     }
     </style>
     <defs>
-        <circle id="trackclosure" r=".06" style="fill:var(--foreground)"/>
-        <path id="bufferstop" fill="none" stroke="#000" d="M-.1-.2H0v.4h-.1" style="stroke:var(--foreground)"/>
+        <g id="bufferstop">
+            <path fill="none" stroke="#000" d="M-.1-.2H0v.4h-.1" style="stroke:var(--foreground)"/>
+        </g>
+        <g id="trackclosure">
+            <circle r=".06" style="fill:var(--foreground)"/>
+        </g>
         <g id="turnout">
             <defs>
                 <pattern id="turnout-manual-operation" width="20%" height="20%" stroke-width=".1" style="stroke:var(--foreground)" viewBox="0 0 1 1">
