@@ -16,5 +16,5 @@
             --transform: scale(-1, -1);
         }
     </style>
-    <path id="bufferstop" fill="none" stroke="#000" d="M-.1-.2H0v.4h-.1" style="stroke:var(--foreground)"/>
+    <path fill="none" stroke="#000" d="M-.1-.2H0v.4h-.1" style="stroke:var(--foreground)"/>
 </svg>
