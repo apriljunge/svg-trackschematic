@@ -55,12 +55,22 @@ summary: You can use the following elements
             <details>
             <summary>Advanced</summary>
                 <ul>
+                    {%- for name, properties in svg.data.advanced -%}
                     <li>
-                        <label for="{{ svg.fileSlug }}-{{ name }}-foreground">
-                            <code>--foreground:</code>
+                        <div>{{ name }}</div>
+                        {% if properties.summary %}
+                        <p>{{ properties.summary }}</p>
+                        {% endif %}
+                        <label for="{{ svg.fileSlug }}-{{ name }}">
+                            <code>{{ properties.property }}</code>
                         </label>
-                        <input id="{{ svg.fileSlug }}-{{ name }}-foreground" type="color" value="#000000">
+                        {% set type = "text" %}
+                        {% if properties.type %}
+                            {% set type = properties.type %}
+                        {% endif %}
+                        <input id="{{ svg.fileSlug }}-{{ name }}" data-property="{{ properties.property }}" type="{{ type }}" value="{{ properties.default }}">
                     </li>
+                    {% endfor %}
                 </ul>
             </details>
         </form>

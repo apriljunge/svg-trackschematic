@@ -1,5 +1,12 @@
 {
     "permalink": "{{ page.filePathStem }}.svg",
     "layout": "svg.njk",
-    "tags": ["svg"]
+    "tags": ["svg"],
+    "advanced": {
+        "foreground color": {
+            "property": "--foreground",
+            "default": "#000",
+            "type": "color"
+        }
+    }
 }
