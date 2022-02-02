@@ -19,6 +19,16 @@
         --opacity-buffer-stop-point: 1;
     }.fouling-point {
         --opacity-fouling-point: 1;
+    }.maintrack {
+        fill: none;
+        stroke: black;
+        stroke: var(--foreground);
+        stroke-width: 0.0703
+    }.secondarytrack {
+        fill: none;
+        stroke: black;
+        stroke: var(--foreground);
+        stroke-width: 0.024605
     }.manual-operation {
         --turnout-fill: url(#turnout-manual-operation);
     }.slip-none {

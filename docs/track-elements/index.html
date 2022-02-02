@@ -27,9 +27,69 @@
             <ul class="svg-list">
     <h2 id="topology">Topology</h2>
     <li>
+        <h3>Maintrack</h3>
+        <svg id="test-maintrack" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
+            <polyline points="-1,0 0,0 1,-1" class="maintrack" />
+            
+        </svg>
+        <form data-target="test-maintrack">
+            <h4>Options</h4>
+            <ul><li>No options</li></ul>
+            <details>
+            <summary>Advanced</summary>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="maintrack-foreground color">
+                            <code>--foreground</code>
+                        </label>
+                        
+                        
+                            
+                        
+                        <input id="maintrack-foreground color" data-property="--foreground" type="color" value="#000">
+                    </li>
+                    
+                </ul>
+            </details>
+        </form>
+    </li>
+    <li>
+        <h3>Secondarytrack</h3>
+        <svg id="test-secondarytrack" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
+            <polyline points="-1,0 0,0 1,-1" class="secondarytrack" />
+            
+        </svg>
+        <form data-target="test-secondarytrack">
+            <h4>Options</h4>
+            <ul><li>No options</li></ul>
+            <details>
+            <summary>Advanced</summary>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="secondarytrack-foreground color">
+                            <code>--foreground</code>
+                        </label>
+                        
+                        
+                            
+                        
+                        <input id="secondarytrack-foreground color" data-property="--foreground" type="color" value="#000">
+                    </li>
+                    
+                </ul>
+            </details>
+        </form>
+    </li>
+    <li>
         <h3>Bufferstop</h3>
         <svg id="test-bufferstop" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
             <use href="#bufferstop" x="0" y="0" />
+            
         </svg>
         <form data-target="test-bufferstop">
             <h4>Options</h4>
@@ -76,13 +136,203 @@
                 </li></ul>
             <details>
             <summary>Advanced</summary>
-                <ul>
-                    <li>
-                        <label for="bufferstop--foreground">
-                            <code>--foreground:</code>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="bufferstop-foreground color">
+                            <code>--foreground</code>
                         </label>
-                        <input id="bufferstop--foreground" type="color" value="#000000">
+                        
+                        
+                            
+                        
+                        <input id="bufferstop-foreground color" data-property="--foreground" type="color" value="#000">
                     </li>
+                    <li>
+                        <div>friction length</div>
+                        
+                        <p>Friction has to be enabled</p>
+                        
+                        <label for="bufferstop-friction length">
+                            <code>--friction-length</code>
+                        </label>
+                        
+                        
+                        <input id="bufferstop-friction length" data-property="--friction-length" type="text" value="0.5px">
+                    </li>
+                    
+                </ul>
+            </details>
+        </form>
+    </li>
+    <li>
+        <h3>Trackclosure</h3>
+        <svg id="test-trackclosure" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
+            <use href="#trackclosure" x="0" y="0" />
+            
+        </svg>
+        <form data-target="test-trackclosure">
+            <h4>Options</h4>
+            <ul></ul>
+            <details>
+            <summary>Advanced</summary>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="trackclosure-foreground color">
+                            <code>--foreground</code>
+                        </label>
+                        
+                        
+                            
+                        
+                        <input id="trackclosure-foreground color" data-property="--foreground" type="color" value="#000">
+                    </li>
+                    
+                </ul>
+            </details>
+        </form>
+    </li>
+    <li>
+        <h3>Turnout</h3>
+        <svg id="test-turnout" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
+            <use href="#turnout" x="0" y="0" />
+            
+        </svg>
+        <form data-target="test-turnout">
+            <h4>Options</h4>
+            <ul><li>
+                    horizontal direction
+                    <ul>
+                        
+                        <li>
+                            
+                            
+                                
+                            
+                            <input type="radio" checked data-default name="turnout-horizontal direction" id="turnout-horizontal direction-forward" value="forward">
+                            <label for="turnout-horizontal direction-forward">
+                                <code>forward</code>
+                                
+                                <span>(default)</span>
+                                
+                            </label>
+                        </li><li>
+                            
+                            
+                            <input type="radio"  name="turnout-horizontal direction" id="turnout-horizontal direction-backward" value="backward">
+                            <label for="turnout-horizontal direction-backward">
+                                <code>backward</code>
+                                
+                            </label>
+                        </li></ul>
+                </li><li>
+                    vertical direction
+                    <ul>
+                        
+                        <li>
+                            
+                            
+                                
+                            
+                            <input type="radio" checked data-default name="turnout-vertical direction" id="turnout-vertical direction-left" value="left">
+                            <label for="turnout-vertical direction-left">
+                                <code>left</code>
+                                
+                                <span>(default)</span>
+                                
+                            </label>
+                        </li><li>
+                            
+                            
+                            <input type="radio"  name="turnout-vertical direction" id="turnout-vertical direction-right" value="right">
+                            <label for="turnout-vertical direction-right">
+                                <code>right</code>
+                                
+                            </label>
+                        </li></ul>
+                </li><li>
+                    operation
+                    <ul>
+                        
+                        
+                               
+                        <li>
+                            
+                            
+                            <input type="checkbox"  name="turnout-operation" id="turnout-operation-manual-operation" value="manual-operation">
+                            <label for="turnout-operation-manual-operation">
+                                <code>manual-operation</code>
+                                
+                            </label>
+                        </li></ul>
+                </li><li>
+                    fouling point
+                    <ul>
+                        
+                        
+                               
+                        <li>
+                            
+                            
+                            <input type="checkbox"  name="turnout-fouling point" id="turnout-fouling point-fouling-point" value="fouling-point">
+                            <label for="turnout-fouling point-fouling-point">
+                                <code>fouling-point</code>
+                                
+                            </label>
+                        </li></ul>
+                </li><li>
+                    pointer
+                    <ul>
+                        
+                        
+                        <li>
+                            <input type="radio" checked name="turnout-pointer" id="turnout-pointer-null" value="">
+                            <label for="turnout-pointer-null"><span>(default)</span></label>
+                        </li>
+                        <li>
+                            
+                            
+                            <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-left" value="points-left">
+                            <label for="turnout-pointer-points-left">
+                                <code>points-left</code>
+                                
+                            </label>
+                        </li><li>
+                            
+                            
+                            <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-right" value="points-right">
+                            <label for="turnout-pointer-points-right">
+                                <code>points-right</code>
+                                
+                            </label>
+                        </li><li>
+                            
+                            
+                            <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-moving" value="points-moving">
+                            <label for="turnout-pointer-points-moving">
+                                <code>points-moving</code>
+                                
+                            </label>
+                        </li></ul>
+                </li></ul>
+            <details>
+            <summary>Advanced</summary>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="turnout-foreground color">
+                            <code>--foreground</code>
+                        </label>
+                        
+                        
+                            
+                        
+                        <input id="turnout-foreground color" data-property="--foreground" type="color" value="#000">
+                    </li>
+                    
                 </ul>
             </details>
         </form>
@@ -90,7 +340,9 @@
     <li>
         <h3>Crossing</h3>
         <svg id="test-crossing" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
             <use href="#crossing" x="0" y="0" />
+            
         </svg>
         <form data-target="test-crossing">
             <h4>Options</h4>
@@ -137,84 +389,19 @@
                 </li></ul>
             <details>
             <summary>Advanced</summary>
-                <ul>
-                    <li>
-                        <label for="crossing--foreground">
-                            <code>--foreground:</code>
-                        </label>
-                        <input id="crossing--foreground" type="color" value="#000000">
-                    </li>
-                </ul>
-            </details>
-        </form>
-    </li>
-    <li>
-        <h3>Derailers</h3>
-        <svg id="test-derailers" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
-            <use href="#derailers" x="0" y="0" />
-        </svg>
-        <form data-target="test-derailers">
-            <h4>Options</h4>
-            <ul><li>
-                    horizontal direction
-                    <ul>
+                <ul><li>
+                        <div>foreground color</div>
                         
-                        <li>
-                            
-                            
-                                
-                            
-                            <input type="radio" checked data-default name="derailers-horizontal direction" id="derailers-horizontal direction-forward" value="forward">
-                            <label for="derailers-horizontal direction-forward">
-                                <code>forward</code>
-                                
-                                <span>(default)</span>
-                                
-                            </label>
-                        </li><li>
-                            
-                            
-                            <input type="radio"  name="derailers-horizontal direction" id="derailers-horizontal direction-backward" value="backward">
-                            <label for="derailers-horizontal direction-backward">
-                                <code>backward</code>
-                                
-                            </label>
-                        </li></ul>
-                </li><li>
-                    vertical direction
-                    <ul>
-                        
-                        <li>
-                            
-                            
-                                
-                            
-                            <input type="radio" checked data-default name="derailers-vertical direction" id="derailers-vertical direction-left" value="left">
-                            <label for="derailers-vertical direction-left">
-                                <code>left</code>
-                                
-                                <span>(default)</span>
-                                
-                            </label>
-                        </li><li>
-                            
-                            
-                            <input type="radio"  name="derailers-vertical direction" id="derailers-vertical direction-right" value="right">
-                            <label for="derailers-vertical direction-right">
-                                <code>right</code>
-                                
-                            </label>
-                        </li></ul>
-                </li></ul>
-            <details>
-            <summary>Advanced</summary>
-                <ul>
-                    <li>
-                        <label for="derailers--foreground">
-                            <code>--foreground:</code>
+                        <label for="crossing-foreground color">
+                            <code>--foreground</code>
                         </label>
-                        <input id="derailers--foreground" type="color" value="#000000">
+                        
+                        
+                            
+                        
+                        <input id="crossing-foreground color" data-property="--foreground" type="color" value="#000">
                     </li>
+                    
                 </ul>
             </details>
         </form>
@@ -222,7 +409,9 @@
     <li>
         <h3>Slipturnout</h3>
         <svg id="test-slipturnout" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
             <use href="#slipturnout" x="0" y="0" />
+            
         </svg>
         <form data-target="test-slipturnout">
             <h4>Options</h4>
@@ -393,44 +582,31 @@
                 </li></ul>
             <details>
             <summary>Advanced</summary>
-                <ul>
-                    <li>
-                        <label for="slipturnout--foreground">
-                            <code>--foreground:</code>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="slipturnout-foreground color">
+                            <code>--foreground</code>
                         </label>
-                        <input id="slipturnout--foreground" type="color" value="#000000">
+                        
+                        
+                            
+                        
+                        <input id="slipturnout-foreground color" data-property="--foreground" type="color" value="#000">
                     </li>
+                    
                 </ul>
             </details>
         </form>
     </li>
     <li>
-        <h3>Trackclosure</h3>
-        <svg id="test-trackclosure" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
-            <use href="#trackclosure" x="0" y="0" />
+        <h3>Derailers</h3>
+        <svg id="test-derailers" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            
+            <use href="#derailers" x="0" y="0" />
+            
         </svg>
-        <form data-target="test-trackclosure">
-            <h4>Options</h4>
-            <ul></ul>
-            <details>
-            <summary>Advanced</summary>
-                <ul>
-                    <li>
-                        <label for="trackclosure--foreground">
-                            <code>--foreground:</code>
-                        </label>
-                        <input id="trackclosure--foreground" type="color" value="#000000">
-                    </li>
-                </ul>
-            </details>
-        </form>
-    </li>
-    <li>
-        <h3>Turnout</h3>
-        <svg id="test-turnout" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
-            <use href="#turnout" x="0" y="0" />
-        </svg>
-        <form data-target="test-turnout">
+        <form data-target="test-derailers">
             <h4>Options</h4>
             <ul><li>
                     horizontal direction
@@ -441,8 +617,8 @@
                             
                                 
                             
-                            <input type="radio" checked data-default name="turnout-horizontal direction" id="turnout-horizontal direction-forward" value="forward">
-                            <label for="turnout-horizontal direction-forward">
+                            <input type="radio" checked data-default name="derailers-horizontal direction" id="derailers-horizontal direction-forward" value="forward">
+                            <label for="derailers-horizontal direction-forward">
                                 <code>forward</code>
                                 
                                 <span>(default)</span>
@@ -451,8 +627,8 @@
                         </li><li>
                             
                             
-                            <input type="radio"  name="turnout-horizontal direction" id="turnout-horizontal direction-backward" value="backward">
-                            <label for="turnout-horizontal direction-backward">
+                            <input type="radio"  name="derailers-horizontal direction" id="derailers-horizontal direction-backward" value="backward">
+                            <label for="derailers-horizontal direction-backward">
                                 <code>backward</code>
                                 
                             </label>
@@ -466,8 +642,8 @@
                             
                                 
                             
-                            <input type="radio" checked data-default name="turnout-vertical direction" id="turnout-vertical direction-left" value="left">
-                            <label for="turnout-vertical direction-left">
+                            <input type="radio" checked data-default name="derailers-vertical direction" id="derailers-vertical direction-left" value="left">
+                            <label for="derailers-vertical direction-left">
                                 <code>left</code>
                                 
                                 <span>(default)</span>
@@ -476,86 +652,28 @@
                         </li><li>
                             
                             
-                            <input type="radio"  name="turnout-vertical direction" id="turnout-vertical direction-right" value="right">
-                            <label for="turnout-vertical direction-right">
+                            <input type="radio"  name="derailers-vertical direction" id="derailers-vertical direction-right" value="right">
+                            <label for="derailers-vertical direction-right">
                                 <code>right</code>
-                                
-                            </label>
-                        </li></ul>
-                </li><li>
-                    operation
-                    <ul>
-                        
-                        
-                               
-                        <li>
-                            
-                            
-                            <input type="checkbox"  name="turnout-operation" id="turnout-operation-manual-operation" value="manual-operation">
-                            <label for="turnout-operation-manual-operation">
-                                <code>manual-operation</code>
-                                
-                            </label>
-                        </li></ul>
-                </li><li>
-                    fouling point
-                    <ul>
-                        
-                        
-                               
-                        <li>
-                            
-                            
-                            <input type="checkbox"  name="turnout-fouling point" id="turnout-fouling point-fouling-point" value="fouling-point">
-                            <label for="turnout-fouling point-fouling-point">
-                                <code>fouling-point</code>
-                                
-                            </label>
-                        </li></ul>
-                </li><li>
-                    pointer
-                    <ul>
-                        
-                        
-                        <li>
-                            <input type="radio" checked name="turnout-pointer" id="turnout-pointer-null" value="">
-                            <label for="turnout-pointer-null"><span>(default)</span></label>
-                        </li>
-                        <li>
-                            
-                            
-                            <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-left" value="points-left">
-                            <label for="turnout-pointer-points-left">
-                                <code>points-left</code>
-                                
-                            </label>
-                        </li><li>
-                            
-                            
-                            <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-right" value="points-right">
-                            <label for="turnout-pointer-points-right">
-                                <code>points-right</code>
-                                
-                            </label>
-                        </li><li>
-                            
-                            
-                            <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-moving" value="points-moving">
-                            <label for="turnout-pointer-points-moving">
-                                <code>points-moving</code>
                                 
                             </label>
                         </li></ul>
                 </li></ul>
             <details>
             <summary>Advanced</summary>
-                <ul>
-                    <li>
-                        <label for="turnout--foreground">
-                            <code>--foreground:</code>
+                <ul><li>
+                        <div>foreground color</div>
+                        
+                        <label for="derailers-foreground color">
+                            <code>--foreground</code>
                         </label>
-                        <input id="turnout--foreground" type="color" value="#000000">
+                        
+                        
+                            
+                        
+                        <input id="derailers-foreground color" data-property="--foreground" type="color" value="#000">
                     </li>
+                    
                 </ul>
             </details>
         </form>

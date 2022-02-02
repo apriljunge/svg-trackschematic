@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 2 2">
+    <style>
+        :is(svg) {
+            --foreground: black;
+            --background: white;
+            transform: var(--transform);
+            stroke-width: 0.03515;
+        }
+        .right {
+            --transform: scale(1, -1);
+        }
+        .backward {
+            --transform: scale(-1, 1);
+        }
+        .backward.right {
+            --transform: scale(-1, -1);
+        }.secondarytrack {
+        fill: none;
+        stroke: black;
+        stroke: var(--foreground);
+        stroke-width: 0.024605
+    }
+    </style>
+</svg>
