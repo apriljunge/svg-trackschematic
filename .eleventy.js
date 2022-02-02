@@ -44,8 +44,6 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addCollection('sortedTopology', (collectionApi) => {
         return collectionApi.getFilteredByTag('topology').sort((a, b) => {
-            console.log(a.data.order, b.data.order);
-
             if (a.data.order > b.data.order)
                 return 1;
 
