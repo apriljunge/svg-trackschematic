@@ -10,7 +10,17 @@ const formDataToElement = (form) => {
                 targetElement.classList.add(input.value)
             }
         } else {
-            targetElement.style.setProperty(input.dataset.property, input.value);
+            let value = input.value;
+
+            if (input.dataset.unit !== '') {
+                value += input.dataset.unit;
+            }
+
+            targetElement.style.setProperty(input.dataset.property, value);
+
+            if (input.nextElementSibling) {
+                input.nextElementSibling.value = value;
+            }
         }
     });  
 } 
