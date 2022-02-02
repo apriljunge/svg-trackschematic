@@ -4,7 +4,7 @@ summary: You can use the following elements
 ---
 <ul class="svg-list">
     <h2 id="topology">Topology</h2>
-    {%- for svg in collections.topology %}
+    {%- for svg in collections.sortedTopology %}
     <li>
         <h3>{{ svg.fileSlug | capitalize }}</h3>
         <svg id="test-{{ svg.fileSlug }}" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">

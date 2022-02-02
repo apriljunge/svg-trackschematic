@@ -40,7 +40,21 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter('markdownify',(str) => {
         return markdownItRenderer.renderInline(str)
-    })
+    });
+
+    eleventyConfig.addCollection('sortedTopology', (collectionApi) => {
+        return collectionApi.getFilteredByTag('topology').sort((a, b) => {
+            console.log(a.data.order, b.data.order);
+
+            if (a.data.order > b.data.order)
+                return 1;
+
+            if (a.data.order < b.data.order)
+                return -1;
+            
+            return 0;
+        });
+    });
 
     return {
         dir: {
