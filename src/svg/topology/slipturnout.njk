@@ -1,0 +1,211 @@
+---
+options:
+    "vertical direction":
+        default: left
+        classes:
+            - left
+            - right
+    slip:
+        default: slip-double
+        classes:
+            - slip-double
+            - slip-none
+            - slip-left
+            - slip-right
+    operation:
+        classes:
+        - manual-operation
+    "fouling point":
+        classes:
+        - fouling-point
+    "forward pointer":
+        classes:
+        - forward-points-left
+        - forward-points-right
+        - forward-points-moving
+    "backward pointer":
+        classes:
+        - backward-points-left
+        - backward-points-right
+        - backward-points-moving
+---
+<style>
+    .manual-operation {
+        --turnout-fill: url(#turnout-manual-operation);
+    }
+</style>
+<defs>
+    <pattern id="turnout-manual-operation" viewBox="0 0 1 1" width="10%" height="10%" stroke-width="0.1" style="stroke: var(--foreground)" >
+        <line x1="0" y1="-1" x2="2" y2="1" />
+        <line x1="0" y1="0" x2="1" y2="1" />
+        <line x1="-1" y1="0" x2="1" y2="2" />
+    </pattern>
+</defs>
+{%- set turnoutLength = 0.4 -%}
+<path
+    style="fill: var(--turnout-fill, var(--foreground)); stroke: var(--foreground)"
+    d="m 0 0 h {{ turnoutLength }} v {{ turnoutLength * -1 }} z"
+/>
+<path
+    style="fill: var(--turnout-fill, var(--foreground)); stroke: var(--foreground)"
+    d="m 0 0 h {{ turnoutLength * -1 }} v {{ turnoutLength }} z"
+/>
+
+{#-
+    slips
+#}
+<style>
+    .slip-none {
+        --opacity-slip-top: 0;
+        --opacity-slip-bottom: 0;
+    }
+    .slip-left {
+        --opacity-slip-top: 1;
+        --opacity-slip-bottom: 0;
+    }
+    .slip-left.right {
+        --opacity-slip-top: 0;
+        --opacity-slip-bottom: 1;
+    }
+    .slip-right {
+        --opacity-slip-top: 0;
+        --opacity-slip-bottom: 1;
+    }
+    .slip-right.right {
+        --opacity-slip-top: 1;
+        --opacity-slip-bottom: 0;
+    }
+</style>
+<path
+    style="stroke: var(--foreground); opacity: var(--opacity-slip-top, 1)"
+    fill="none"
+    stroke="black"
+    stroke-width="{{ 0.75 | ptInCm }}"
+    d="M -0.4 -0.1 L 0.3 -0.4"
+/>
+<path
+    style="stroke: var(--foreground); opacity: var(--opacity-slip-bottom, 1)"
+    fill="none"
+    stroke="black"
+    stroke-width="{{ 0.75 | ptInCm }}"
+    d="M 0.4 0.1 L -0.3 0.4"
+/>
+
+{#-
+    fouling point
+#}
+<style>
+    .fouling-point {
+        --opacity-fouling-point: 1;
+    }
+</style>
+<line
+    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    x1="0.7" y1="0"
+    x2="0.7" y2="-0.7"
+    stroke="black"
+/>
+<line
+    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    x1="-0.7" y1="0"
+    x2="-0.7" y2="0.7"
+    stroke="black"
+/>
+
+{#-
+    forward
+    top / bottom pointer
+#}
+<style>
+    .forward-points-left:not(.right) {
+        --opacity-forward-pointer-top: 1;
+    }
+    .forward-points-right:not(.right) {
+        --opacity-forward-pointer-bottom: 1;
+    }
+    .forward-points-left.right {
+        --opacity-forward-pointer-bottom: 1;
+    }
+    .forward-points-right.right {
+        --opacity-forward-pointer-top: 1;
+    }
+</style>
+<line
+    style="opacity: var(--opacity-forward-pointer-top, 0); stroke: var(--foreground)"
+    x1="-0.035" y1="-0.1"
+    x2="0.165" y2="-0.3"
+    stroke-width="{{ 1.5 | ptInCm }}"
+    stroke="black"
+/>
+<line
+    style="opacity: var(--opacity-forward-pointer-bottom, 0); stroke: var(--foreground)"
+    x1="0.035" y1="0.1"
+    x2="0.3" y2="0.1"
+    stroke-width="{{ 1.5 | ptInCm }}"
+    stroke="black"
+/>
+
+{#-
+    forward
+    pointer moving
+#}
+<style>
+    .forward-points-moving {
+        --opacity-forward-pointer-moving: 1;
+    }
+</style>
+<g style="opacity: var(--opacity-forward-pointer-moving, 0); fill: var(--foreground)">
+    <circle r="0.05" cx="0.075" cy="0.1" />
+    <circle r="0.05" cx="0.225" cy="0.1" />
+    <circle r="0.05" cx="0.015" cy="-0.15" />
+    <circle r="0.05" cx="0.115" cy="-0.25" />
+</g>
+
+{#-
+    backward
+    top / bottom pointer
+#}
+<style>
+    .backward-points-left:not(.right) {
+        --opacity-backward-pointer-top: 1;
+    }
+    .backward-points-right:not(.right) {
+        --opacity-backward-pointer-bottom: 1;
+    }
+    .backward-points-left.right {
+        --opacity-backward-pointer-bottom: 1;
+    }
+    .backward-points-right.right {
+        --opacity-backward-pointer-top: 1;
+    }
+</style>
+<line
+    style="opacity: var(--opacity-backward-pointer-top, 0); stroke: var(--foreground)"
+    x1="0.035" y1="0.1"
+    x2="-0.165" y2="0.3"
+    stroke-width="{{ 1.5 | ptInCm }}"
+    stroke="black"
+/>
+<line
+    style="opacity: var(--opacity-backward-pointer-bottom, 0); stroke: var(--foreground)"
+    x1="-0.035" y1="-0.1"
+    x2="-0.3" y2="-0.1"
+    stroke-width="{{ 1.5 | ptInCm }}"
+    stroke="black"
+/>
+
+{#-
+    backward
+    pointer moving
+#}
+<style>
+    .backward-points-moving {
+        --opacity-backward-pointer-moving: 1;
+    }
+</style>
+<g style="opacity: var(--opacity-backward-pointer-moving, 0); fill: var(--foreground)">
+    <circle r="0.05" cx="-0.075" cy="-0.1" />
+    <circle r="0.05" cx="-0.225" cy="-0.1" />
+    <circle r="0.05" cx="-0.015" cy="0.15" />
+    <circle r="0.05" cx="-0.115" cy="0.25" />
+</g>
