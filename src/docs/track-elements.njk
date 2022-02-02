@@ -68,7 +68,20 @@ summary: You can use the following elements
                         {% if properties.type %}
                             {% set type = properties.type %}
                         {% endif %}
-                        <input id="{{ svg.fileSlug }}-{{ name }}" data-property="{{ properties.property }}" type="{{ type }}" value="{{ properties.default }}">
+                        {% if properties.type == "range" %}
+                            {% set additionalProps = "min=0 max=1 step=0.1" %}
+                        {% endif %}
+                        <input
+                            id="{{ svg.fileSlug }}-{{ name }}"
+                            {{ additionalProps }}
+                            data-unit="{{ properties.unit}}"
+                            data-property="{{ properties.property }}"
+                            type="{{ type }}"
+                            value="{{ properties.default }}"
+                        >
+                        {% if properties.type %}
+                        <input type="text" readonly value="{{ properties.default }}" />
+                        {% endif %}
                     </li>
                     {% endfor %}
                 </ul>
