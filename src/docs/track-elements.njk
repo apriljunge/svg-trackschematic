@@ -8,7 +8,11 @@ summary: You can use the following elements
     <li>
         <h3>{{ svg.fileSlug | capitalize }}</h3>
         <svg id="test-{{ svg.fileSlug }}" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            {% if svg.data.usage %}
+            {{ svg.data.usage | safe }}
+            {% else %}
             <use href="#{{ svg.fileSlug }}" x="0" y="0" />
+            {% endif %}
         </svg>
         <form data-target="test-{{ svg.fileSlug }}">
             <h4>Options</h4>
