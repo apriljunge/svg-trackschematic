@@ -1,0 +1,25 @@
+---
+options:
+    "horizontal direction":
+        default: forward
+        classes:
+        - forward
+        - backward
+    "vertical direction":
+        default: left
+        classes:
+            - left
+            - right
+---
+<path d="m 0 0.1 v -0.2" stroke="black" style="stroke: var(--foreground)" />
+<path d="m 0 0 l 0.4 -0.4" stroke="black" stroke-dasharray="0.1 0.1" style="stroke: var(--foreground)" />
+
+{# Arrow #}
+{% set arrowWidth = 0.14 %}
+{% set arrowHeight = 0.2 %}
+<path
+    d="M {{ 0.4 - arrowWidth / 2  }} {{ arrowHeight - 0.4 }} L 0.4 -0.4 L {{ 0.4 + arrowWidth / 2  }} {{ arrowHeight - 0.4 }}"
+    transform="rotate(45deg)"
+    transform-origin="0.4 -0.4"
+    style="fill: var(--foreground)"
+/>
