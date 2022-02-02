@@ -18,5 +18,5 @@
     </style>
     <path stroke="#000" d="M0 .1v-.2" style="stroke:var(--foreground)"/>
     <path stroke="#000" stroke-dasharray="0.1 0.1" d="m0 0 .4-.4" style="stroke:var(--foreground)"/>
-    <path d="M.33-.2.4-.4l.07.2" style="fill:var(--foreground)" transform="rotate(45)" transform-origin="0.4 -0.4"/>
+    <path d="M.33-.2.4-.4l.07.2" style="fill:var(--foreground)" transform="rotate(45 .4 -.4)"/>
 </svg>
