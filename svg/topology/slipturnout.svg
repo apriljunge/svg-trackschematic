@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 2 2">
+    <style>
+        :is(svg) {
+            --foreground: black;
+            --background: white;
+            transform: var(--transform);
+            stroke-width: 0.03515;
+        }
+        .right {
+            --transform: scale(1, -1);
+        }
+        .backward {
+            --transform: scale(-1, 1);
+        }
+        .backward.right {
+            --transform: scale(-1, -1);
+        }.manual-operation {
+        --turnout-fill: url(#turnout-manual-operation);
+    }.slip-none {
+        --opacity-slip-top: 0;
+        --opacity-slip-bottom: 0;
+    }
+    .slip-left {
+        --opacity-slip-top: 1;
+        --opacity-slip-bottom: 0;
+    }
+    .slip-left.right {
+        --opacity-slip-top: 0;
+        --opacity-slip-bottom: 1;
+    }
+    .slip-right {
+        --opacity-slip-top: 0;
+        --opacity-slip-bottom: 1;
+    }
+    .slip-right.right {
+        --opacity-slip-top: 1;
+        --opacity-slip-bottom: 0;
+    }.fouling-point {
+        --opacity-fouling-point: 1;
+    }.forward-points-left:not(.right) {
+        --opacity-forward-pointer-top: 1;
+    }
+    .forward-points-right:not(.right) {
+        --opacity-forward-pointer-bottom: 1;
+    }
+    .forward-points-left.right {
+        --opacity-forward-pointer-bottom: 1;
+    }
+    .forward-points-right.right {
+        --opacity-forward-pointer-top: 1;
+    }.forward-points-moving {
+        --opacity-forward-pointer-moving: 1;
+    }.backward-points-left:not(.right) {
+        --opacity-backward-pointer-top: 1;
+    }
+    .backward-points-right:not(.right) {
+        --opacity-backward-pointer-bottom: 1;
+    }
+    .backward-points-left.right {
+        --opacity-backward-pointer-bottom: 1;
+    }
+    .backward-points-right.right {
+        --opacity-backward-pointer-top: 1;
+    }.backward-points-moving {
+        --opacity-backward-pointer-moving: 1;
+    }
+    </style>
+    <defs>
+        <pattern id="turnout-manual-operation" width="10%" height="10%" stroke-width=".1" style="stroke:var(--foreground)" viewBox="0 0 1 1">
+            <path d="m0-1 2 2M0 0l1 1M-1 0l2 2"/>
+        </pattern>
+    </defs>
+    <path d="M0 0h.4v-.4zM0 0h-.4v.4z" style="fill:var(--turnout-fill, var(--foreground));stroke:var(--foreground)"/>
+    <path fill="none" stroke="#000" stroke-width=".026" d="m-.4-.1.7-.3" style="stroke:var(--foreground);opacity:var(--opacity-slip-top, 1)"/>
+    <path fill="none" stroke="#000" stroke-width=".026" d="m.4.1-.7.3" style="stroke:var(--foreground);opacity:var(--opacity-slip-bottom, 1)"/>
+    <path stroke="#000" d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0);stroke:var(--foreground)"/>
+    <path stroke="#000" stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-forward-pointer-top, 0);stroke:var(--foreground)"/>
+    <path stroke="#000" stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-forward-pointer-bottom, 0);stroke:var(--foreground)"/>
+    <g style="opacity:var(--opacity-forward-pointer-moving, 0);fill:var(--foreground)">
+        <circle cx=".075" cy=".1" r=".05"/>
+        <circle cx=".225" cy=".1" r=".05"/>
+        <circle cx=".015" cy="-.15" r=".05"/>
+        <circle cx=".115" cy="-.25" r=".05"/>
+    </g>
+    <path stroke="#000" stroke-width=".053" d="m.035.1-.2.2" style="opacity:var(--opacity-backward-pointer-top, 0);stroke:var(--foreground)"/>
+    <path stroke="#000" stroke-width=".053" d="M-.035-.1H-.3" style="opacity:var(--opacity-backward-pointer-bottom, 0);stroke:var(--foreground)"/>
+    <g style="opacity:var(--opacity-backward-pointer-moving, 0);fill:var(--foreground)">
+        <circle cx="-.075" cy="-.1" r=".05"/>
+        <circle cx="-.225" cy="-.1" r=".05"/>
+        <circle cx="-.015" cy=".15" r=".05"/>
+        <circle cx="-.115" cy=".25" r=".05"/>
+    </g>
+</svg>

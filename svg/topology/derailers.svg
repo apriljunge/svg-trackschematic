@@ -14,11 +14,9 @@
         }
         .backward.right {
             --transform: scale(-1, -1);
-        }.friction {
-        --friction-length: 0.5px;
-        --opacity-buffer-stop-point: 1;
-    }
+        }
     </style>
-    <path fill="none" stroke="#000" d="M-.1-.2H0v.4h-.1" style="stroke:var(--foreground);transform:translateX(calc(var(--friction-length, 0) * -1))"/>
-    <circle r=".06" style="opacity:var(--opacity-buffer-stop-point, 0);fill:var(--foreground)"/>
+    <path stroke="#000" d="M0 .1v-.2" style="stroke:var(--foreground)"/>
+    <path stroke="#000" stroke-dasharray="0.1 0.1" d="m0 0 .4-.4" style="stroke:var(--foreground)"/>
+    <path d="M.33-.2.4-.4l.07.2" style="fill:var(--foreground)" transform="rotate(45)" transform-origin="0.4 -0.4"/>
 </svg>
