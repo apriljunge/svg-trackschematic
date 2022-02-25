@@ -24,7 +24,7 @@ summary: You can use the following elements
                         {% set type = "radio" %}
                         {% if properties.classes.length == 1 %}
                             {% set type = "checkbox" %}   
-                        {% elif properties.default == null %}
+                        {% elif (properties.default == null and properties.required != true) %}
                         <li>
                             <input type="{{ type }}" checked name="{{ svg.fileSlug }}-{{ name }}" id="{{ svg.fileSlug }}-{{ name }}-null" value="">
                             <label for="{{ svg.fileSlug }}-{{ name }}-null"><span>(default)</span></label>
@@ -34,6 +34,9 @@ summary: You can use the following elements
                         {%- for class in properties.classes -%}
                         <li>
                             {% set checked = "" %}
+                            {% if loop.first and properties.required == true %}
+                                {% set checked = "checked data-default" %}
+                            {% endif %}
                             {% if properties.default == class %}
                                 {% set checked = "checked data-default" %}
                             {% endif %}
