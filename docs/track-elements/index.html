@@ -54,6 +54,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -94,6 +95,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -124,14 +126,14 @@
                             
                                 
                             
+                            
                             <input type="radio" checked data-default name="bufferstop-horizontal direction" id="bufferstop-horizontal direction-forward" value="forward">
                             <label for="bufferstop-horizontal direction-forward">
                                 <code>forward</code>
                                 
-                                <span>(default)</span>
-                                
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="bufferstop-horizontal direction" id="bufferstop-horizontal direction-backward" value="backward">
@@ -147,6 +149,7 @@
                         
                                
                         <li>
+                            
                             
                             
                             <input type="checkbox"  name="bufferstop-friction" id="bufferstop-friction-friction" value="friction">
@@ -174,6 +177,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -201,6 +205,7 @@
                             min=0 max=1 step=0.1
                             data-unit="px"
                             data-property="--friction-length"
+                            data-default="0.5"
                             type="range"
                             value="0.5"
                         >
@@ -241,6 +246,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -271,14 +277,14 @@
                             
                                 
                             
+                            
                             <input type="radio" checked data-default name="turnout-horizontal direction" id="turnout-horizontal direction-forward" value="forward">
                             <label for="turnout-horizontal direction-forward">
                                 <code>forward</code>
                                 
-                                <span>(default)</span>
-                                
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="turnout-horizontal direction" id="turnout-horizontal direction-backward" value="backward">
@@ -288,7 +294,7 @@
                             </label>
                         </li></ul>
                 </li><li>
-                    vertical direction
+                    branch direction
                     <ul>
                         
                         <li>
@@ -296,19 +302,19 @@
                             
                                 
                             
-                            <input type="radio" checked data-default name="turnout-vertical direction" id="turnout-vertical direction-left" value="left">
-                            <label for="turnout-vertical direction-left">
-                                <code>left</code>
-                                
-                                <span>(default)</span>
+                            
+                            <input type="radio" checked data-default name="turnout-branch direction" id="turnout-branch direction-branch-left" value="branch-left">
+                            <label for="turnout-branch direction-branch-left">
+                                <code>branch-left</code>
                                 
                             </label>
                         </li><li>
                             
                             
-                            <input type="radio"  name="turnout-vertical direction" id="turnout-vertical direction-right" value="right">
-                            <label for="turnout-vertical direction-right">
-                                <code>right</code>
+                            
+                            <input type="radio"  name="turnout-branch direction" id="turnout-branch direction-branch-right" value="branch-right">
+                            <label for="turnout-branch direction-branch-right">
+                                <code>branch-right</code>
                                 
                             </label>
                         </li></ul>
@@ -319,6 +325,7 @@
                         
                                
                         <li>
+                            
                             
                             
                             <input type="checkbox"  name="turnout-operation" id="turnout-operation-manual-operation" value="manual-operation">
@@ -334,6 +341,7 @@
                         
                                
                         <li>
+                            
                             
                             
                             <input type="checkbox"  name="turnout-fouling point" id="turnout-fouling point-fouling-point" value="fouling-point">
@@ -354,6 +362,7 @@
                         <li>
                             
                             
+                            
                             <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-left" value="points-left">
                             <label for="turnout-pointer-points-left">
                                 <code>points-left</code>
@@ -362,12 +371,14 @@
                         </li><li>
                             
                             
+                            
                             <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-right" value="points-right">
                             <label for="turnout-pointer-points-right">
                                 <code>points-right</code>
                                 
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="turnout-pointer" id="turnout-pointer-points-moving" value="points-moving">
@@ -395,6 +406,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -417,7 +429,7 @@
         <form data-target="test-crossing">
             <h4>Options</h4>
             <ul><li>
-                    vertical direction
+                    branch direction
                     <ul>
                         
                         <li>
@@ -425,19 +437,19 @@
                             
                                 
                             
-                            <input type="radio" checked data-default name="crossing-vertical direction" id="crossing-vertical direction-left" value="left">
-                            <label for="crossing-vertical direction-left">
-                                <code>left</code>
-                                
-                                <span>(default)</span>
+                            
+                            <input type="radio" checked data-default name="crossing-branch direction" id="crossing-branch direction-branch-left" value="branch-left">
+                            <label for="crossing-branch direction-branch-left">
+                                <code>branch-left</code>
                                 
                             </label>
                         </li><li>
                             
                             
-                            <input type="radio"  name="crossing-vertical direction" id="crossing-vertical direction-right" value="right">
-                            <label for="crossing-vertical direction-right">
-                                <code>right</code>
+                            
+                            <input type="radio"  name="crossing-branch direction" id="crossing-branch direction-branch-right" value="branch-right">
+                            <label for="crossing-branch direction-branch-right">
+                                <code>branch-right</code>
                                 
                             </label>
                         </li></ul>
@@ -448,6 +460,7 @@
                         
                                
                         <li>
+                            
                             
                             
                             <input type="checkbox"  name="crossing-fouling point" id="crossing-fouling point-fouling-point" value="fouling-point">
@@ -475,6 +488,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -497,7 +511,7 @@
         <form data-target="test-slipturnout">
             <h4>Options</h4>
             <ul><li>
-                    vertical direction
+                    branch direction
                     <ul>
                         
                         <li>
@@ -505,19 +519,19 @@
                             
                                 
                             
-                            <input type="radio" checked data-default name="slipturnout-vertical direction" id="slipturnout-vertical direction-left" value="left">
-                            <label for="slipturnout-vertical direction-left">
-                                <code>left</code>
-                                
-                                <span>(default)</span>
+                            
+                            <input type="radio" checked data-default name="slipturnout-branch direction" id="slipturnout-branch direction-branch-left" value="branch-left">
+                            <label for="slipturnout-branch direction-branch-left">
+                                <code>branch-left</code>
                                 
                             </label>
                         </li><li>
                             
                             
-                            <input type="radio"  name="slipturnout-vertical direction" id="slipturnout-vertical direction-right" value="right">
-                            <label for="slipturnout-vertical direction-right">
-                                <code>right</code>
+                            
+                            <input type="radio"  name="slipturnout-branch direction" id="slipturnout-branch direction-branch-right" value="branch-right">
+                            <label for="slipturnout-branch direction-branch-right">
+                                <code>branch-right</code>
                                 
                             </label>
                         </li></ul>
@@ -526,6 +540,7 @@
                     <ul>
                         
                         <li>
+                            
                             
                             
                                 
@@ -540,6 +555,7 @@
                         </li><li>
                             
                             
+                            
                             <input type="radio"  name="slipturnout-slip" id="slipturnout-slip-slip-none" value="slip-none">
                             <label for="slipturnout-slip-slip-none">
                                 <code>slip-none</code>
@@ -548,12 +564,14 @@
                         </li><li>
                             
                             
+                            
                             <input type="radio"  name="slipturnout-slip" id="slipturnout-slip-slip-left" value="slip-left">
                             <label for="slipturnout-slip-slip-left">
                                 <code>slip-left</code>
                                 
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="slipturnout-slip" id="slipturnout-slip-slip-right" value="slip-right">
@@ -571,6 +589,7 @@
                         <li>
                             
                             
+                            
                             <input type="checkbox"  name="slipturnout-operation" id="slipturnout-operation-manual-operation" value="manual-operation">
                             <label for="slipturnout-operation-manual-operation">
                                 <code>manual-operation</code>
@@ -584,6 +603,7 @@
                         
                                
                         <li>
+                            
                             
                             
                             <input type="checkbox"  name="slipturnout-fouling point" id="slipturnout-fouling point-fouling-point" value="fouling-point">
@@ -604,6 +624,7 @@
                         <li>
                             
                             
+                            
                             <input type="radio"  name="slipturnout-forward pointer" id="slipturnout-forward pointer-forward-points-left" value="forward-points-left">
                             <label for="slipturnout-forward pointer-forward-points-left">
                                 <code>forward-points-left</code>
@@ -612,12 +633,14 @@
                         </li><li>
                             
                             
+                            
                             <input type="radio"  name="slipturnout-forward pointer" id="slipturnout-forward pointer-forward-points-right" value="forward-points-right">
                             <label for="slipturnout-forward pointer-forward-points-right">
                                 <code>forward-points-right</code>
                                 
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="slipturnout-forward pointer" id="slipturnout-forward pointer-forward-points-moving" value="forward-points-moving">
@@ -638,6 +661,7 @@
                         <li>
                             
                             
+                            
                             <input type="radio"  name="slipturnout-backward pointer" id="slipturnout-backward pointer-backward-points-left" value="backward-points-left">
                             <label for="slipturnout-backward pointer-backward-points-left">
                                 <code>backward-points-left</code>
@@ -646,12 +670,14 @@
                         </li><li>
                             
                             
+                            
                             <input type="radio"  name="slipturnout-backward pointer" id="slipturnout-backward pointer-backward-points-right" value="backward-points-right">
                             <label for="slipturnout-backward pointer-backward-points-right">
                                 <code>backward-points-right</code>
                                 
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="slipturnout-backward pointer" id="slipturnout-backward pointer-backward-points-moving" value="backward-points-moving">
@@ -679,6 +705,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >
@@ -709,14 +736,14 @@
                             
                                 
                             
+                            
                             <input type="radio" checked data-default name="derailers-horizontal direction" id="derailers-horizontal direction-forward" value="forward">
                             <label for="derailers-horizontal direction-forward">
                                 <code>forward</code>
                                 
-                                <span>(default)</span>
-                                
                             </label>
                         </li><li>
+                            
                             
                             
                             <input type="radio"  name="derailers-horizontal direction" id="derailers-horizontal direction-backward" value="backward">
@@ -726,7 +753,7 @@
                             </label>
                         </li></ul>
                 </li><li>
-                    vertical direction
+                    branch direction
                     <ul>
                         
                         <li>
@@ -734,19 +761,19 @@
                             
                                 
                             
-                            <input type="radio" checked data-default name="derailers-vertical direction" id="derailers-vertical direction-left" value="left">
-                            <label for="derailers-vertical direction-left">
-                                <code>left</code>
-                                
-                                <span>(default)</span>
+                            
+                            <input type="radio" checked data-default name="derailers-branch direction" id="derailers-branch direction-branch-left" value="branch-left">
+                            <label for="derailers-branch direction-branch-left">
+                                <code>branch-left</code>
                                 
                             </label>
                         </li><li>
                             
                             
-                            <input type="radio"  name="derailers-vertical direction" id="derailers-vertical direction-right" value="right">
-                            <label for="derailers-vertical direction-right">
-                                <code>right</code>
+                            
+                            <input type="radio"  name="derailers-branch direction" id="derailers-branch direction-branch-right" value="branch-right">
+                            <label for="derailers-branch direction-branch-right">
+                                <code>branch-right</code>
                                 
                             </label>
                         </li></ul>
@@ -769,6 +796,7 @@
                             
                             data-unit=""
                             data-property="--foreground"
+                            data-default="#000"
                             type="color"
                             value="#000"
                         >

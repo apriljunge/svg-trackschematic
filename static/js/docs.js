@@ -16,11 +16,15 @@ const formDataToElement = (form) => {
                 value += input.dataset.unit;
             }
 
-            targetElement.style.setProperty(input.dataset.property, value);
-
             if (input.nextElementSibling) {
                 input.nextElementSibling.value = value;
             }
+
+            if (input.value === input.dataset.default) {
+                value = null;
+            }
+
+            targetElement.style.setProperty(input.dataset.property, value);
         }
     });  
 } 

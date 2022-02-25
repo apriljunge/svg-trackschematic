@@ -6,13 +6,15 @@
             transform: var(--transform);
             stroke-width: 0.03515;
         }
-        .right {
+        .branch-right {
             --transform: scale(1, -1);
         }
+        .face-backward,
         .backward {
             --transform: scale(-1, 1);
         }
-        .backward.right {
+        .face-backward.right,
+        .backward.branch-right {
             --transform: scale(-1, -1);
         }.secondarytrack {
         fill: none;
