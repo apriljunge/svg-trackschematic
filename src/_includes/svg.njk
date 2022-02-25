@@ -6,7 +6,7 @@
             transform: var(--transform);
             stroke-width: {{ 1 | ptInCm }};
         }
-        .right {
+        .branch-right {
             --transform: scale(1, -1);
         }
         .face-backward,
@@ -14,7 +14,7 @@
             --transform: scale(-1, 1);
         }
         .face-backward.right,
-        .backward.right {
+        .backward.branch-right {
             --transform: scale(-1, -1);
         }
     </style>
