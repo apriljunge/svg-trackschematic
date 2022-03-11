@@ -32,11 +32,11 @@ options:
 ---
 <style>
     .manual-operation {
-        --turnout-fill: url(#turnout-manual-operation);
+        fill: url(#turnout-manual-operation);
     }
 </style>
 <defs>
-    <pattern id="turnout-manual-operation" viewBox="0 0 1 1" width="10%" height="10%" stroke-width="0.1" style="stroke: var(--foreground)" >
+    <pattern id="turnout-manual-operation" viewBox="0 0 1 1" width="10%" height="10%" stroke-width="0.1" >
         <line x1="0" y1="-1" x2="2" y2="1" />
         <line x1="0" y1="0" x2="1" y2="1" />
         <line x1="-1" y1="0" x2="1" y2="2" />
@@ -44,11 +44,9 @@ options:
 </defs>
 {%- set turnoutLength = 0.4 -%}
 <path
-    style="fill: var(--turnout-fill, var(--foreground)); stroke: var(--foreground)"
     d="m 0 0 h {{ turnoutLength }} v {{ turnoutLength * -1 }} z"
 />
 <path
-    style="fill: var(--turnout-fill, var(--foreground)); stroke: var(--foreground)"
     d="m 0 0 h {{ turnoutLength * -1 }} v {{ turnoutLength }} z"
 />
 
@@ -78,16 +76,14 @@ options:
     }
 </style>
 <path
-    style="stroke: var(--foreground); opacity: var(--opacity-slip-top, 1)"
+    style="opacity: var(--opacity-slip-top, 1)"
     fill="none"
-    stroke="black"
     stroke-width="{{ 0.75 | ptInCm }}"
     d="M -0.4 -0.1 L 0.3 -0.4"
 />
 <path
-    style="stroke: var(--foreground); opacity: var(--opacity-slip-bottom, 1)"
+    style="opacity: var(--opacity-slip-bottom, 1)"
     fill="none"
-    stroke="black"
     stroke-width="{{ 0.75 | ptInCm }}"
     d="M 0.4 0.1 L -0.3 0.4"
 />
@@ -101,16 +97,14 @@ options:
     }
 </style>
 <line
-    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-fouling-point, 0)"
     x1="0.7" y1="0"
     x2="0.7" y2="-0.7"
-    stroke="black"
 />
 <line
-    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-fouling-point, 0)"
     x1="-0.7" y1="0"
     x2="-0.7" y2="0.7"
-    stroke="black"
 />
 
 {#-
@@ -132,18 +126,16 @@ options:
     }
 </style>
 <line
-    style="opacity: var(--opacity-forward-pointer-top, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-forward-pointer-top, 0)"
     x1="-0.035" y1="-0.1"
     x2="0.165" y2="-0.3"
     stroke-width="{{ 1.5 | ptInCm }}"
-    stroke="black"
 />
 <line
-    style="opacity: var(--opacity-forward-pointer-bottom, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-forward-pointer-bottom, 0)"
     x1="0.035" y1="0.1"
     x2="0.3" y2="0.1"
     stroke-width="{{ 1.5 | ptInCm }}"
-    stroke="black"
 />
 
 {#-
@@ -155,7 +147,7 @@ options:
         --opacity-forward-pointer-moving: 1;
     }
 </style>
-<g style="opacity: var(--opacity-forward-pointer-moving, 0); fill: var(--foreground)">
+<g style="opacity: var(--opacity-forward-pointer-moving, 0)" stroke-width="0">
     <circle r="0.05" cx="0.075" cy="0.1" />
     <circle r="0.05" cx="0.225" cy="0.1" />
     <circle r="0.05" cx="0.015" cy="-0.15" />
@@ -181,18 +173,16 @@ options:
     }
 </style>
 <line
-    style="opacity: var(--opacity-backward-pointer-top, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-backward-pointer-top, 0)"
     x1="0.035" y1="0.1"
     x2="-0.165" y2="0.3"
     stroke-width="{{ 1.5 | ptInCm }}"
-    stroke="black"
 />
 <line
-    style="opacity: var(--opacity-backward-pointer-bottom, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-backward-pointer-bottom, 0)"
     x1="-0.035" y1="-0.1"
     x2="-0.3" y2="-0.1"
     stroke-width="{{ 1.5 | ptInCm }}"
-    stroke="black"
 />
 
 {#-
@@ -204,7 +194,7 @@ options:
         --opacity-backward-pointer-moving: 1;
     }
 </style>
-<g style="opacity: var(--opacity-backward-pointer-moving, 0); fill: var(--foreground)">
+<g style="opacity: var(--opacity-backward-pointer-moving, 0)" stroke-width="0">
     <circle r="0.05" cx="-0.075" cy="-0.1" />
     <circle r="0.05" cx="-0.225" cy="-0.1" />
     <circle r="0.05" cx="-0.015" cy="0.15" />

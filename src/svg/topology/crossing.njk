@@ -10,8 +10,8 @@ options:
         classes:
         - fouling-point
 ---
-<path d="m 0 0 h 0.4 v -0.4 z" fill="none" stroke="black" style="stroke: var(--foreground)" />
-<path d="m 0 0 h -0.4 v 0.4 z" fill="none" stroke="black" style="stroke: var(--foreground)" />
+<path d="m 0 0 h 0.4 v -0.4 z" fill="none" />
+<path d="m 0 0 h -0.4 v 0.4 z" fill="none" />
 
 {#-
     fouling point
@@ -22,14 +22,12 @@ options:
     }
 </style>
 <line
-    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-fouling-point, 0)"
     x1="0.7" y1="0"
     x2="0.7" y2="-0.7"
-    stroke="black"
 />
 <line
-    style="opacity: var(--opacity-fouling-point, 0); stroke: var(--foreground)"
+    style="opacity: var(--opacity-fouling-point, 0)"
     x1="-0.7" y1="0"
     x2="-0.7" y2="0.7"
-    stroke="black"
 />

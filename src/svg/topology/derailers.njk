@@ -12,8 +12,8 @@ options:
             - branch-left
             - branch-right
 ---
-<path d="m 0 0.1 v -0.2" stroke="black" style="stroke: var(--foreground)" />
-<path d="m 0 0 l 0.4 -0.4" stroke="black" stroke-dasharray="0.1 0.1" style="stroke: var(--foreground)" />
+<path d="m 0 0.1 v -0.2" />
+<path d="m 0 0 l 0.4 -0.4" stroke-dasharray="0.1 0.1" />
 
 {# Arrow #}
 {% set arrowWidth = 0.14 %}
@@ -21,5 +21,5 @@ options:
 <path
     d="M {{ 0.4 - arrowWidth / 2  }} {{ arrowHeight - 0.4 }} L 0.4 -0.4 L {{ 0.4 + arrowWidth / 2  }} {{ arrowHeight - 0.4 }}"
     transform="translate(0.4 -0.4) rotate(45deg) translate(-0.4 0.4)"
-    style="fill: var(--foreground)"
+    stroke-width="0"
 />
