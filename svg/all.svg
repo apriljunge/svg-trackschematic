@@ -3,6 +3,8 @@
         :is(svg) {
             --foreground: black;
             --background: white;
+            fill: var(--foreground);
+            stroke: var(--foreground);
             transform: var(--transform);
             stroke-width: 0.03515;
         }
@@ -32,7 +34,7 @@
         stroke: var(--foreground);
         stroke-width: 0.024605
     }.manual-operation {
-        --turnout-fill: url(#turnout-manual-operation);
+        fill: url(#turnout-manual-operation);
     }.slip-none {
         --opacity-slip-top: 0;
         --opacity-slip-bottom: 0;
@@ -81,7 +83,7 @@
     }.backward-points-moving {
         --opacity-backward-pointer-moving: 1;
     }.manual-operation {
-        --turnout-fill: url(#turnout-manual-operation);
+        fill: url(#turnout-manual-operation);
     }.fouling-point {
         --opacity-fouling-point: 1;
     }.points-left:not(.right) {
@@ -101,39 +103,39 @@
     </style>
     <defs>
         <g id="bufferstop">
-            <path fill="none" stroke="#000" d="M-.1-.2H0v.4h-.1" style="stroke:var(--foreground);transform:translateX(calc(var(--friction-length, 0) * -1))"/>
-            <circle r=".06" style="opacity:var(--opacity-buffer-stop-point, 0);fill:var(--foreground)"/>
+            <path fill="none" d="M-.1-.2H0v.4h-.1" style="transform:translateX(calc(var(--friction-length, 0) * -1))"/>
+            <circle r=".06" stroke-width="0" style="opacity:var(--opacity-buffer-stop-point, 0)"/>
         </g>
         <g id="crossing">
-            <path fill="none" stroke="#000" d="M0 0h.4v-.4zM0 0h-.4v.4z" style="stroke:var(--foreground)"/>
-            <path stroke="#000" d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0);stroke:var(--foreground)"/>
+            <path fill="none" d="M0 0h.4v-.4zM0 0h-.4v.4z"/>
+            <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
         </g>
         <g id="derailers">
-            <path stroke="#000" d="M0 .1v-.2" style="stroke:var(--foreground)"/>
-            <path stroke="#000" stroke-dasharray="0.1 0.1" d="m0 0 .4-.4" style="stroke:var(--foreground)"/>
-            <path d="M.33-.2.4-.4l.07.2" style="fill:var(--foreground)" transform="rotate(45 .4 -.4)"/>
+            <path d="M0 .1v-.2"/>
+            <path stroke-dasharray="0.1 0.1" d="m0 0 .4-.4"/>
+            <path stroke-width="0" d="M.33-.2.4-.4l.07.2" transform="rotate(45 .4 -.4)"/>
         </g>
         <g id="slipturnout">
             <defs>
-                <pattern id="turnout-manual-operation" width="10%" height="10%" stroke-width=".1" style="stroke:var(--foreground)" viewBox="0 0 1 1">
+                <pattern id="turnout-manual-operation" width="10%" height="10%" stroke-width=".1" viewBox="0 0 1 1">
                     <path d="m0-1 2 2M0 0l1 1M-1 0l2 2"/>
                 </pattern>
             </defs>
-            <path d="M0 0h.4v-.4zM0 0h-.4v.4z" style="fill:var(--turnout-fill, var(--foreground));stroke:var(--foreground)"/>
-            <path fill="none" stroke="#000" stroke-width=".026" d="m-.4-.1.7-.3" style="stroke:var(--foreground);opacity:var(--opacity-slip-top, 1)"/>
-            <path fill="none" stroke="#000" stroke-width=".026" d="m.4.1-.7.3" style="stroke:var(--foreground);opacity:var(--opacity-slip-bottom, 1)"/>
-            <path stroke="#000" d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0);stroke:var(--foreground)"/>
-            <path stroke="#000" stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-forward-pointer-top, 0);stroke:var(--foreground)"/>
-            <path stroke="#000" stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-forward-pointer-bottom, 0);stroke:var(--foreground)"/>
-            <g style="opacity:var(--opacity-forward-pointer-moving, 0);fill:var(--foreground)">
+            <path d="M0 0h.4v-.4zM0 0h-.4v.4z"/>
+            <path fill="none" stroke-width=".026" d="m-.4-.1.7-.3" style="opacity:var(--opacity-slip-top, 1)"/>
+            <path fill="none" stroke-width=".026" d="m.4.1-.7.3" style="opacity:var(--opacity-slip-bottom, 1)"/>
+            <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
+            <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-forward-pointer-top, 0)"/>
+            <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-forward-pointer-bottom, 0)"/>
+            <g stroke-width="0" style="opacity:var(--opacity-forward-pointer-moving, 0)">
                 <circle cx=".075" cy=".1" r=".05"/>
                 <circle cx=".225" cy=".1" r=".05"/>
                 <circle cx=".015" cy="-.15" r=".05"/>
                 <circle cx=".115" cy="-.25" r=".05"/>
             </g>
-            <path stroke="#000" stroke-width=".053" d="m.035.1-.2.2" style="opacity:var(--opacity-backward-pointer-top, 0);stroke:var(--foreground)"/>
-            <path stroke="#000" stroke-width=".053" d="M-.035-.1H-.3" style="opacity:var(--opacity-backward-pointer-bottom, 0);stroke:var(--foreground)"/>
-            <g style="opacity:var(--opacity-backward-pointer-moving, 0);fill:var(--foreground)">
+            <path stroke-width=".053" d="m.035.1-.2.2" style="opacity:var(--opacity-backward-pointer-top, 0)"/>
+            <path stroke-width=".053" d="M-.035-.1H-.3" style="opacity:var(--opacity-backward-pointer-bottom, 0)"/>
+            <g stroke-width="0" style="opacity:var(--opacity-backward-pointer-moving, 0)">
                 <circle cx="-.075" cy="-.1" r=".05"/>
                 <circle cx="-.225" cy="-.1" r=".05"/>
                 <circle cx="-.015" cy=".15" r=".05"/>
@@ -141,14 +143,14 @@
             </g>
         </g>
         <g id="trackclosure">
-            <circle r=".06" style="fill:var(--foreground)"/>
+            <circle r=".06" stroke-width="0"/>
         </g>
         <g id="turnout">
-            <path d="M0 0h.4v-.4z" style="fill:var(--turnout-fill, var(--foreground));stroke:var(--foreground)"/>
-            <path stroke="#000" d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0);stroke:var(--foreground)"/>
-            <path stroke="#000" stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0);stroke:var(--foreground)"/>
-            <path stroke="#000" stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0);stroke:var(--foreground)"/>
-            <g style="opacity:var(--opacity-pointer-moving, 0);fill:var(--foreground)">
+            <path d="M0 0h.4v-.4z"/>
+            <path d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0)"/>
+            <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0)"/>
+            <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0)"/>
+            <g stroke-width="0" style="opacity:var(--opacity-pointer-moving, 0)">
                 <circle cx=".075" cy=".1" r=".05"/>
                 <circle cx=".225" cy=".1" r=".05"/>
                 <circle cx=".015" cy="-.15" r=".05"/>

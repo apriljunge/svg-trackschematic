@@ -3,6 +3,8 @@
         :is(svg) {
             --foreground: black;
             --background: white;
+            fill: var(--foreground);
+            stroke: var(--foreground);
             transform: var(--transform);
             stroke-width: 0.03515;
         }

@@ -3,6 +3,8 @@
         :is(svg) {
             --foreground: black;
             --background: white;
+            fill: var(--foreground);
+            stroke: var(--foreground);
             transform: var(--transform);
             stroke-width: 0.03515;
         }
@@ -18,5 +20,5 @@
             --transform: scale(-1, -1);
         }
     </style>
-    <circle r=".06" style="fill:var(--foreground)"/>
+    <circle r=".06" stroke-width="0"/>
 </svg>

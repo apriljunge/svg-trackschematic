@@ -3,6 +3,8 @@
         :is(svg) {
             --foreground: black;
             --background: white;
+            fill: var(--foreground);
+            stroke: var(--foreground);
             transform: var(--transform);
             stroke-width: 0.03515;
         }
@@ -20,6 +22,6 @@
         --opacity-fouling-point: 1;
     }
     </style>
-    <path fill="none" stroke="#000" d="M0 0h.4v-.4zM0 0h-.4v.4z" style="stroke:var(--foreground)"/>
-    <path stroke="#000" d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0);stroke:var(--foreground)"/>
+    <path fill="none" d="M0 0h.4v-.4zM0 0h-.4v.4z"/>
+    <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
 </svg>

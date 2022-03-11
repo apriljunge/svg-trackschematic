@@ -3,6 +3,8 @@
         :is(svg) {
             --foreground: black;
             --background: white;
+            fill: var(--foreground);
+            stroke: var(--foreground);
             transform: var(--transform);
             stroke-width: 0.03515;
         }
@@ -18,7 +20,7 @@
             --transform: scale(-1, -1);
         }
     </style>
-    <path stroke="#000" d="M0 .1v-.2" style="stroke:var(--foreground)"/>
-    <path stroke="#000" stroke-dasharray="0.1 0.1" d="m0 0 .4-.4" style="stroke:var(--foreground)"/>
-    <path d="M.33-.2.4-.4l.07.2" style="fill:var(--foreground)" transform="rotate(45 .4 -.4)"/>
+    <path d="M0 .1v-.2"/>
+    <path stroke-dasharray="0.1 0.1" d="m0 0 .4-.4"/>
+    <path stroke-width="0" d="M.21-.308.4-.4l-.092.19"/>
 </svg>
