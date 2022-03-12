@@ -1,10 +1,8 @@
 ---
 override:tags:
 ---
-<defs>
 {%- for svg in collections.svg -%}
-    <g id="{{ svg.fileSlug }}" viewBox="-1 -1 2 2">
-        {{ svg.templateContent | safe }}
-    </g>
+<symbol id="{{ svg.fileSlug }}" viewBox="-1 -1 2 2" x="-1" y="-1">
+    {{ svg.templateContent | safe }}
+</symbol>
 {%- endfor -%}
-</defs>

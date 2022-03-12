@@ -19,7 +19,8 @@ module.exports = function(eleventyConfig) {
                                 minifyStyles: false,
                                 convertStyleToAttrs: false,
                                 inlineStyles: false,
-                                collapseGroups: false
+                                collapseGroups: false,
+                                removeUnknownsAndDefaults: false
                             }
                         }
                     },
