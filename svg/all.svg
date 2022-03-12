@@ -5,6 +5,7 @@
             --background: white;
             fill: var(--foreground);
             stroke: var(--foreground);
+            stroke-width: 0.03515;
         }
         .branch-right {
             --transform: scale(1, -1);
@@ -17,9 +18,8 @@
         .backward.branch-right {
             --transform: scale(-1, -1);
         }
-        symbol {
+        .symbol {
             transform: var(--transform);
-            stroke-width: 0.03515;
         }.friction {
         --friction-length: 0.5px;
         --opacity-buffer-stop-point: 1;
@@ -115,38 +115,40 @@
         --opacity-pointer-moving: 1;
     }
     </style>
-    <symbol id="bufferstop" x="-1" y="-1" viewBox="-1 -1 2 2">
-        <path fill="none" d="M-.1-.2H0v.4h-.1" style="transform:translateX(calc(var(--friction-length, 0) * -1))"/>
-        <circle cx="0" cy="0" r=".06" stroke-width="0" style="opacity:var(--opacity-buffer-stop-point, 0)"/>
-    </symbol>
-    <symbol id="crossing" x="-1" y="-1" viewBox="-1 -1 2 2">
-        <path fill="none" d="M0 0h.4v-.4zM0 0h-.4v.4z"/>
-        <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
-    </symbol>
-    <symbol id="derailers" x="-1" y="-1" viewBox="-1 -1 2 2">
-        <path d="M0 .1v-.2"/>
-        <path stroke-dasharray="0.1 0.1" d="m0 0 .4-.4"/>
-        <path stroke-width="0" d="M.33-.2.4-.4l.07.2" transform="rotate(45 .4 -.4)"/>
-    </symbol>
-    <symbol id="slipturnout" x="-1" y="-1" viewBox="-1 -1 2 2">
-        <use id="slipturnout-forward" href="#turnout"/>
-        <use id="sliptournout-backward" href="#turnout"/>
-        <path fill="none" stroke-width=".026" d="m-.4-.1.7-.3" style="opacity:var(--opacity-slip-top, 1)"/>
-        <path fill="none" stroke-width=".026" d="m.4.1-.7.3" style="opacity:var(--opacity-slip-bottom, 1)"/>
-    </symbol>
-    <symbol id="trackclosure" x="-1" y="-1" viewBox="-1 -1 2 2">
-        <circle r=".06" stroke-width="0"/>
-    </symbol>
-    <symbol id="turnout" x="-1" y="-1" viewBox="-1 -1 2 2">
-        <defs>
-            <pattern id="turnout-manual-operation" width="20%" height="20%" stroke-width=".1" viewBox="0 0 1 1">
-                <path d="m0-1 2 2M0 0l1 1M-1 0l2 2"/>
-            </pattern>
-        </defs>
-        <path d="M0 0h.4v-.4z"/>
-        <path d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0)"/>
-        <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0)"/>
-        <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0)"/>
-        <path stroke-linecap="round" stroke-width=".1" d="M.075.1h.001m.149 0h.001M.015-.15h.001m.099-.1h.001" style="opacity:var(--opacity-pointer-moving, 0)"/>
-    </symbol>
+    <defs>
+        <g id="bufferstop" class="symbol">
+            <path fill="none" d="M-.1-.2H0v.4h-.1" style="transform:translateX(calc(var(--friction-length, 0) * -1))"/>
+            <circle cx="0" cy="0" r=".06" stroke-width="0" style="opacity:var(--opacity-buffer-stop-point, 0)"/>
+        </g>
+        <g id="crossing" class="symbol">
+            <path fill="none" d="M0 0h.4v-.4zM0 0h-.4v.4z"/>
+            <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
+        </g>
+        <g id="derailers" class="symbol">
+            <path d="M0 .1v-.2"/>
+            <path stroke-dasharray="0.1 0.1" d="m0 0 .4-.4"/>
+            <path stroke-width="0" d="M.33-.2.4-.4l.07.2" transform="rotate(45 .4 -.4)"/>
+        </g>
+        <g id="slipturnout" class="symbol">
+            <use id="slipturnout-forward" href="#turnout"/>
+            <use id="sliptournout-backward" href="#turnout"/>
+            <path fill="none" stroke-width=".026" d="m-.4-.1.7-.3" style="opacity:var(--opacity-slip-top, 1)"/>
+            <path fill="none" stroke-width=".026" d="m.4.1-.7.3" style="opacity:var(--opacity-slip-bottom, 1)"/>
+        </g>
+        <g id="trackclosure" class="symbol">
+            <circle r=".06" stroke-width="0"/>
+        </g>
+        <g id="turnout" class="symbol">
+            <defs>
+                <pattern id="turnout-manual-operation" width="20%" height="20%" stroke-width=".1" viewBox="0 0 1 1">
+                    <path d="m0-1 2 2M0 0l1 1M-1 0l2 2"/>
+                </pattern>
+            </defs>
+            <path d="M0 0h.4v-.4z"/>
+            <path d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0)"/>
+            <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0)"/>
+            <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0)"/>
+            <path stroke-linecap="round" stroke-width=".1" d="M.075.1h.001m.149 0h.001M.015-.15h.001m.099-.1h.001" style="opacity:var(--opacity-pointer-moving, 0)"/>
+        </g>
+    </defs>
 </svg>

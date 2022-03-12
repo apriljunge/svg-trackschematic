@@ -5,6 +5,7 @@
             --background: white;
             fill: var(--foreground);
             stroke: var(--foreground);
+            stroke-width: 0.03515;
         }
         .branch-right {
             --transform: scale(1, -1);
@@ -17,9 +18,8 @@
         .backward.branch-right {
             --transform: scale(-1, -1);
         }
-        symbol {
+        .symbol {
             transform: var(--transform);
-            stroke-width: 0.03515;
         }.fouling-point {
         --opacity-fouling-point: 1;
     }
