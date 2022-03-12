@@ -5,8 +5,6 @@
             --background: white;
             fill: var(--foreground);
             stroke: var(--foreground);
-            transform: var(--transform);
-            stroke-width: 0.03515;
         }
         .branch-right {
             --transform: scale(1, -1);
@@ -18,6 +16,10 @@
         .face-backward.right,
         .backward.branch-right {
             --transform: scale(-1, -1);
+        }
+        symbol {
+            transform: var(--transform);
+            stroke-width: 0.03515;
         }.manual-operation {
         fill: url(#turnout-manual-operation);
     }.fouling-point {
@@ -46,10 +48,5 @@
     <path d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0)"/>
     <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0)"/>
     <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0)"/>
-    <g stroke-width=".05" style="opacity:var(--opacity-pointer-moving, 0)">
-        <circle cx=".075" cy=".1" r=".025"/>
-        <circle cx=".225" cy=".1" r=".025"/>
-        <circle cx=".015" cy="-.15" r=".025"/>
-        <circle cx=".115" cy="-.25" r=".025"/>
-    </g>
+    <path stroke-linecap="round" stroke-width=".1" d="M.075.1h.001m.149 0h.001M.015-.15h.001m.099-.1h.001" style="opacity:var(--opacity-pointer-moving, 0)"/>
 </svg>

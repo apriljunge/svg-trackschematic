@@ -5,8 +5,6 @@
             --background: white;
             fill: var(--foreground);
             stroke: var(--foreground);
-            transform: var(--transform);
-            stroke-width: 0.03515;
         }
         .branch-right {
             --transform: scale(1, -1);
@@ -18,8 +16,52 @@
         .face-backward.right,
         .backward.branch-right {
             --transform: scale(-1, -1);
-        }.manual-operation {
-        fill: url(#turnout-manual-operation);
+        }
+        symbol {
+            transform: var(--transform);
+            stroke-width: 0.03515;
+        }.forward-points-left:not(.right) {
+        --opacity-forward-pointer-top: 1;
+    }
+    .forward-points-right:not(.right) {
+        --opacity-forward-pointer-bottom: 1;
+    }
+    .forward-points-left.right {
+        --opacity-forward-pointer-bottom: 1;
+    }
+    .forward-points-right.right {
+        --opacity-forward-pointer-top: 1;
+    }
+    .forward-points-moving {
+        --opacity-forward-pointer-moving: 1;
+    }
+    .backward-points-left:not(.right) {
+        --opacity-backward-pointer-top: 1;
+    }
+    .backward-points-right:not(.right) {
+        --opacity-backward-pointer-bottom: 1;
+    }
+    .backward-points-left.right {
+        --opacity-backward-pointer-bottom: 1;
+    }
+    .backward-points-right.right {
+        --opacity-backward-pointer-top: 1;
+    }
+    .backward-points-moving {
+        --opacity-backward-pointer-moving: 1;
+    }
+
+    #slipturnout-forward {
+        --transform:;
+        --opacity-pointer-top:      var(--opacity-forward-pointer-top);
+        --opacity-pointer-bottom:   var(--opacity-forward-pointer-bottom);
+        --opacity-pointer-moving:   var(--opacity-forward-pointer-moving);
+    }
+    #sliptournout-backward {
+        --transform: scale(-1, -1);
+        --opacity-pointer-top:      var(--opacity-backward-pointer-top);
+        --opacity-pointer-bottom:   var(--opacity-backward-pointer-bottom);
+        --opacity-pointer-moving:   var(--opacity-backward-pointer-moving);
     }.slip-none {
         --opacity-slip-top: 0;
         --opacity-slip-bottom: 0;
@@ -39,59 +81,10 @@
     .slip-right.right {
         --opacity-slip-top: 1;
         --opacity-slip-bottom: 0;
-    }.fouling-point {
-        --opacity-fouling-point: 1;
-    }.forward-points-left:not(.right) {
-        --opacity-forward-pointer-top: 1;
-    }
-    .forward-points-right:not(.right) {
-        --opacity-forward-pointer-bottom: 1;
-    }
-    .forward-points-left.right {
-        --opacity-forward-pointer-bottom: 1;
-    }
-    .forward-points-right.right {
-        --opacity-forward-pointer-top: 1;
-    }.forward-points-moving {
-        --opacity-forward-pointer-moving: 1;
-    }.backward-points-left:not(.right) {
-        --opacity-backward-pointer-top: 1;
-    }
-    .backward-points-right:not(.right) {
-        --opacity-backward-pointer-bottom: 1;
-    }
-    .backward-points-left.right {
-        --opacity-backward-pointer-bottom: 1;
-    }
-    .backward-points-right.right {
-        --opacity-backward-pointer-top: 1;
-    }.backward-points-moving {
-        --opacity-backward-pointer-moving: 1;
     }
     </style>
-    <defs>
-        <pattern id="turnout-manual-operation" width="10%" height="10%" stroke-width=".1" viewBox="0 0 1 1">
-            <path d="m0-1 2 2M0 0l1 1M-1 0l2 2"/>
-        </pattern>
-    </defs>
-    <path d="M0 0h.4v-.4zM0 0h-.4v.4z"/>
+    <use id="slipturnout-forward" href="#turnout"/>
+    <use id="sliptournout-backward" href="#turnout"/>
     <path fill="none" stroke-width=".026" d="m-.4-.1.7-.3" style="opacity:var(--opacity-slip-top, 1)"/>
     <path fill="none" stroke-width=".026" d="m.4.1-.7.3" style="opacity:var(--opacity-slip-bottom, 1)"/>
-    <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
-    <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-forward-pointer-top, 0)"/>
-    <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-forward-pointer-bottom, 0)"/>
-    <g stroke-width=".05" style="opacity:var(--opacity-forward-pointer-moving, 0)">
-        <circle cx=".075" cy=".1" r=".025"/>
-        <circle cx=".225" cy=".1" r=".025"/>
-        <circle cx=".015" cy="-.15" r=".025"/>
-        <circle cx=".115" cy="-.25" r=".025"/>
-    </g>
-    <path stroke-width=".053" d="m.035.1-.2.2" style="opacity:var(--opacity-backward-pointer-top, 0)"/>
-    <path stroke-width=".053" d="M-.035-.1H-.3" style="opacity:var(--opacity-backward-pointer-bottom, 0)"/>
-    <g stroke-width=".05" style="opacity:var(--opacity-backward-pointer-moving, 0)">
-        <circle cx="-.075" cy="-.1" r=".025"/>
-        <circle cx="-.225" cy="-.1" r=".025"/>
-        <circle cx="-.015" cy=".15" r=".025"/>
-        <circle cx="-.115" cy=".25" r=".025"/>
-    </g>
 </svg>
