@@ -127,19 +127,19 @@
             <path d="M.7 0v-.7M-.7 0v.7" style="opacity:var(--opacity-fouling-point, 0)"/>
             <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-forward-pointer-top, 0)"/>
             <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-forward-pointer-bottom, 0)"/>
-            <g stroke-width="0" style="opacity:var(--opacity-forward-pointer-moving, 0)">
-                <circle cx=".075" cy=".1" r=".05"/>
-                <circle cx=".225" cy=".1" r=".05"/>
-                <circle cx=".015" cy="-.15" r=".05"/>
-                <circle cx=".115" cy="-.25" r=".05"/>
+            <g stroke-width=".05" style="opacity:var(--opacity-forward-pointer-moving, 0)">
+                <circle cx=".075" cy=".1" r=".025"/>
+                <circle cx=".225" cy=".1" r=".025"/>
+                <circle cx=".015" cy="-.15" r=".025"/>
+                <circle cx=".115" cy="-.25" r=".025"/>
             </g>
             <path stroke-width=".053" d="m.035.1-.2.2" style="opacity:var(--opacity-backward-pointer-top, 0)"/>
             <path stroke-width=".053" d="M-.035-.1H-.3" style="opacity:var(--opacity-backward-pointer-bottom, 0)"/>
-            <g stroke-width="0" style="opacity:var(--opacity-backward-pointer-moving, 0)">
-                <circle cx="-.075" cy="-.1" r=".05"/>
-                <circle cx="-.225" cy="-.1" r=".05"/>
-                <circle cx="-.015" cy=".15" r=".05"/>
-                <circle cx="-.115" cy=".25" r=".05"/>
+            <g stroke-width=".05" style="opacity:var(--opacity-backward-pointer-moving, 0)">
+                <circle cx="-.075" cy="-.1" r=".025"/>
+                <circle cx="-.225" cy="-.1" r=".025"/>
+                <circle cx="-.015" cy=".15" r=".025"/>
+                <circle cx="-.115" cy=".25" r=".025"/>
             </g>
         </g>
         <g id="trackclosure">
@@ -150,11 +150,11 @@
             <path d="M.7 0v-.7" style="opacity:var(--opacity-fouling-point, 0)"/>
             <path stroke-width=".053" d="m-.035-.1.2-.2" style="opacity:var(--opacity-pointer-top, 0)"/>
             <path stroke-width=".053" d="M.035.1H.3" style="opacity:var(--opacity-pointer-bottom, 0)"/>
-            <g stroke-width="0" style="opacity:var(--opacity-pointer-moving, 0)">
-                <circle cx=".075" cy=".1" r=".05"/>
-                <circle cx=".225" cy=".1" r=".05"/>
-                <circle cx=".015" cy="-.15" r=".05"/>
-                <circle cx=".115" cy="-.25" r=".05"/>
+            <g stroke-width=".05" style="opacity:var(--opacity-pointer-moving, 0)">
+                <circle cx=".075" cy=".1" r=".025"/>
+                <circle cx=".225" cy=".1" r=".025"/>
+                <circle cx=".015" cy="-.15" r=".025"/>
+                <circle cx=".115" cy="-.25" r=".025"/>
             </g>
         </g>
     </defs>
