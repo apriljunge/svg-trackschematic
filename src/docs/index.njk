@@ -2,3 +2,17 @@
 title: svg trackschematic documentation
 summary: This documentation is work in progress. The first section to be finished is _track elements_.
 ---
+<svg viewBox="0 -10 40 55">
+    <polyline class="maintrack" points="1.5,0 38.5,0" />
+    <polyline class="maintrack" points="15,0 16,1 26,1 27,0" />
+
+    <polyline class="secondarytrack" points="9,1 16,1" />
+    <polyline class="secondarytrack" points="11,-1 13,-1 14,0" />
+    <polyline class="secondarytrack" points="14,1 15,2 25,2" />
+
+    <use href="#bufferstop" class="backward" x="9" y="1"></use>
+    <use href="#bufferstop" class="backward" x="11" y="-1"></use>
+    <use href="#bufferstop" class="forward" x="25" y="2"></use>
+
+    <use href="#turnout" class="backward branch-right" x="14" y="0"></use>
+</svg>
